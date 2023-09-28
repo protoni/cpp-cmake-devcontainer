@@ -25,3 +25,8 @@ docker run -v ${PWD}\build:/app/build -v ${PWD}\src:/app/src -v ${PWD}\scripts:/
 ```
 docker run --network=host -e SONAR_HOST_URL='http://127.0.0.1:9000' -v ${PWD}\build:/app/build -v ${PWD}\src:/app/src -v ${PWD}\scripts:/app/scripts -t test-app
 ```
+
+#### Configure SonarQube
+```
+From the SonarQube front-end ( localhost:9000 ), Copy the token to scripts/compile.sh -> -Dsonar.token=
+```
