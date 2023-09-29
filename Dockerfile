@@ -38,8 +38,9 @@ COPY scripts/compile.sh /app/scripts/
 
 WORKDIR /app/build
 
+# Open port 9000 for sonarqube
 EXPOSE 9000
 
-# Run your C++ application
+# Build the C++ application
 RUN chmod +x /app/scripts/compile.sh
-CMD "/bin/bash" "/app/scripts/compile.sh"
+ENTRYPOINT ["/bin/bash", "/app/scripts/compile.sh"]

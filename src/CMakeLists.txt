@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
+# Generate compile commands for sonarlint
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 project(cpp_test)
 
 # Set C++ standard

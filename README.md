@@ -23,7 +23,7 @@ docker run -v ${PWD}\build:/app/build -v ${PWD}\src:/app/src -v ${PWD}\scripts:/
 
 #### Run with SonarQube
 ```
-docker run --network=host -e SONAR_HOST_URL='http://127.0.0.1:9000' -v ${PWD}\build:/app/build -v ${PWD}\src:/app/src -v ${PWD}\scripts:/app/scripts -t test-app
+docker run --network=host -e SONAR_HOST_URL='http://127.0.0.1:9000' -v ${PWD}\build:/app/build -v ${PWD}\src:/app/src -v ${PWD}\scripts:/app/scripts -t test-app sonar PASTE_TOKEN_HERE
 ```
 
 #### Configure SonarQube
