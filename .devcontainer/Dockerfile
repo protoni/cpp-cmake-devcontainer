@@ -8,7 +8,7 @@ COPY . .
 
 # Install dependencies for code-server
 RUN apt-get update && \
-    apt-get install -y curl wget && \
+    apt-get install -y curl wget cppcheck && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app/build

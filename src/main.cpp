@@ -38,7 +38,7 @@ CommandLineParseStatus parse(int opt)
 int main()
 {
   CommandLineParseStatus status = parse(0);
-
+    
   if (status.code == CommandLineParseStatus::Code::Init)
      std::cout << "OK" << std::endl;
 

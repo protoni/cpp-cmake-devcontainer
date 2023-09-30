@@ -1,12 +1,27 @@
 {
   "workspaceFolder": "/app",
+  "mounts": [
+    "source=${localWorkspaceFolder}/src,target=/app/src,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/build,target=/app/build,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/scripts,target=/app/scripts,type=bind,consistency=cached"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
-        "sonarsource.sonarlint-vscode"
+        "sonarsource.sonarlint-vscode",
+        "jbenden.c-cpp-flylint",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack"
       ],
       "settings": {
-        "sonarlint.pathToCompileCommands": "/app/build/compile_commands.json"
+        "sonarlint.pathToCompileCommands": "/app/build/compile_commands.json",
+        "cppcheck.path": "/usr/bin/cppcheck",
+        "cppcheck.enable": true,
+        "c-cpp-flylint.cppcheck.enable": true,
+        "c-cpp-flylint.lizard.enable": false,
+        "c-cpp-flylint.flexelint.enable": false,
+        "c-cpp-flylint.flawfinder.enable": false,
+        "c-cpp-flylint.clang.enable": false
       }
     }
   },
