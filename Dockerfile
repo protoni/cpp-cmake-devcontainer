@@ -35,6 +35,7 @@ ENV PATH="/opt/sonar-scanner/bin:${PATH}"
 COPY src/CMakeLists.txt /app/src/
 COPY src/main.cpp /app/src/
 COPY scripts/compile.sh /app/scripts/
+COPY .devcontainer/extensions.txt /app/
 
 WORKDIR /app/build
 
@@ -43,4 +44,4 @@ EXPOSE 9000
 
 # Build the C++ application
 RUN chmod +x /app/scripts/compile.sh
-ENTRYPOINT ["/bin/bash", "/app/scripts/compile.sh"]
+CMD ["/bin/bash", "/app/scripts/compile.sh"]

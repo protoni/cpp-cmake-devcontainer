@@ -1,0 +1,16 @@
+{
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sonarsource.sonarlint-vscode"
+      ],
+      "settings": {
+        "sonarlint.pathToCompileCommands": "/app/build/compile_commands.json"
+      }
+    }
+  },
+  "build": {
+    "dockerfile": "Dockerfile"
+  }
+}
