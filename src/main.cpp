@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 
+/**
+ * @brief Parsing status
+*/
 struct CommandLineParseStatus {
     enum class Code { Init, Ok, Error, VersionRequested, HelpRequested };
 
@@ -12,6 +15,14 @@ struct CommandLineParseStatus {
         : code(status), error(err) {}
 };
 
+/**
+ * @brief Parse command line arguments
+ * 
+ * This is a test function to test returning a statust object from
+ * a function scope.
+ * @param opt Test option so that different objects can be returned to caller
+ * @return Parsing status
+*/
 CommandLineParseStatus parse(int opt) {
     using Code = CommandLineParseStatus::Code;
 
@@ -24,6 +35,9 @@ CommandLineParseStatus parse(int opt) {
     return CommandLineParseStatus(Code::Error);
 }
 
+/**
+ * @brief This is the main entrypoint
+*/
 int main() {
     CommandLineParseStatus status = parse(0);
 

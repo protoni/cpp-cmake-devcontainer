@@ -15,6 +15,7 @@ RUN apt-get update && \
     openjdk-17-jdk \
     libgtest-dev \
     xsltproc \
+    doxygen \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a directory for your project
@@ -36,6 +37,7 @@ ENV PATH="/opt/sonar-scanner/bin:${PATH}"
 
 # Copy your CMakeLists.txt and source files into the container
 COPY CMakeLists.txt /app/
+COPY Doxyfile /app/
 COPY src/ /app/src/
 COPY scripts/compile.sh /app/scripts/
 COPY .devcontainer/extensions.txt /app/

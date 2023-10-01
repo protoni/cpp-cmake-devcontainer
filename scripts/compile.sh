@@ -53,6 +53,10 @@ valgrind --tool=callgrind --callgrind-out-file="/app/build/valgrind_output/callg
 # Generate HTML report of the valgrind XML report
 # ??
 
+# Generate docs
+echo "Generating docs with Doxygen.."
+doxygen /app/Doxyfile
+
 # Run tests
 ctest --output-on-failure
 
