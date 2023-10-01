@@ -56,13 +56,3 @@ target_link_libraries(cpp_test PRIVATE stdc++)
 add_test(NAME cpp_test_test
         COMMAND cpp_test_test --gtest_output=xml:${CMAKE_BINARY_DIR}/tests_output/test_results.xml
 )
-
-# Add a custom target to generate HTML report
-add_custom_target(html_report
-    COMMAND xsltproc ${CMAKE_SOURCE_DIR}/test/gtest2html.xslt ${CMAKE_BINARY_DIR}/tests_output/test_results.xml > ${CMAKE_BINARY_DIR}/tests_output/test_report.html
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-    COMMENT "Generating HTML report"
-)
-
-# Ensure that the HTML report generation is performed after the tests have been run
-add_dependencies(html_report cpp_test_test)

@@ -57,4 +57,7 @@ valgrind --tool=callgrind --callgrind-out-file="/app/build/valgrind_output/callg
 ctest --output-on-failure
 
 # Generate HTML report from the Gtests
-make html_report
+mkdir -p /app/build/tests_output
+/app/build/cpp_test_test --gtest_output=xml:/app/build/tests_output/test_results.xml
+xsltproc /app/test/gtest2html.xslt /app/build/tests_output/test_results.xml > /app/build/tests_output/test_report.html
+echo "Generating HTML report"
