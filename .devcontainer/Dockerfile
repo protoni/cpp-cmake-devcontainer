@@ -8,7 +8,12 @@ COPY . .
 
 # Install dependencies for code-server
 RUN apt-get update && \
-    apt-get install -y curl wget cppcheck && \
+    apt-get install -y \
+        curl \
+        wget \
+        cppcheck \
+        git \
+        libgtest-dev && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app/build
@@ -26,7 +31,6 @@ RUN mkdir -p /home/vscode/.vscode-server/extensions \
     && cat /app/extensions.txt | xargs -L 1 code-server --install-extension
 
 COPY settings.vscode.json /root/.vscode-remote/data/Machine/settings.json
-
 
 # Set the entry point without default parameters
 CMD ["/bin/bash", "/app/scripts/compile.sh"]

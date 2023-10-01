@@ -13,6 +13,8 @@ RUN apt-get update && \
     wget \
     zip \
     openjdk-17-jdk \
+    libgtest-dev \
+    xsltproc \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a directory for your project
@@ -22,6 +24,7 @@ WORKDIR /app
 RUN mkdir /app/src
 RUN mkdir /app/build
 RUN mkdir /app/scripts
+RUN mkdir /app/test
 
 # Install SonarQube
 RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006.zip && \
@@ -32,10 +35,11 @@ RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-s
 ENV PATH="/opt/sonar-scanner/bin:${PATH}"
 
 # Copy your CMakeLists.txt and source files into the container
-COPY src/CMakeLists.txt /app/src/
-COPY src/main.cpp /app/src/
+COPY CMakeLists.txt /app/
+COPY src/ /app/src/
 COPY scripts/compile.sh /app/scripts/
 COPY .devcontainer/extensions.txt /app/
+COPY test/ /app/test/
 
 WORKDIR /app/build
 

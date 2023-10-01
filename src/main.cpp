@@ -18,8 +18,6 @@ struct CommandLineParseStatus
     explicit CommandLineParseStatus(Code status, const std::string& err = "")
         : code(status)
         , error(err) {}
-    
-    
 };
 
 CommandLineParseStatus parse(int opt)

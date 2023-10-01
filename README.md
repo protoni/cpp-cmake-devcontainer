@@ -5,10 +5,13 @@ Currently configured setup:
   - Cmake project
     - Run CppCheck and generate HTML report under build/cppcheck_output folder
     - Run Valgrind and generate XML report under build/valgrind_output folder
+      - Also generate callgrind object for Kcachegrind/other tool to open with
+    - Run unittests and generate HTML report under build/tests_output folder
     - ( Optional ) Run sonar-scanner
   - VScode dev env setup
     - Sonarlint for c++
     - Cppcheck
+  - 
 
 #### Build
 ```

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build the application using CMake.
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON /app/src
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON /app
 
 # Build the project
 cmake --build .
@@ -42,7 +42,19 @@ valgrind \
     --leak-check=full \
     --show-leak-kinds=all \
     --xml=yes \
-    /app/build/cpp_test > /app/build/valgrind_output/valgrind_output.xml 2>&1
+    --xml-file=/app/build/valgrind_output/valgrind_output.xml \
+    /app/build/cpp_test 2>&1
+
+# Generate call stack profile
+# Requirements: 
+# Drag output file to for example: https://www.speedscope.app/, or use Kcachegrind
+valgrind --tool=callgrind --callgrind-out-file="/app/build/valgrind_output/callgrind_output" /app/build/cpp_test
 
 # Generate HTML report of the valgrind XML report
 # ??
+
+# Run tests
+ctest --output-on-failure
+
+# Generate HTML report from the Gtests
+make html_report

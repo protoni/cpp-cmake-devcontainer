@@ -3,7 +3,8 @@
   "mounts": [
     "source=${localWorkspaceFolder}/src,target=/app/src,type=bind,consistency=cached",
     "source=${localWorkspaceFolder}/build,target=/app/build,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/scripts,target=/app/scripts,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder}/scripts,target=/app/scripts,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/test,target=/app/test,type=bind,consistency=cached"
   ],
   "customizations": {
     "vscode": {
