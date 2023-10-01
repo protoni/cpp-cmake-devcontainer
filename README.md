@@ -12,6 +12,7 @@ Currently configured setup:
     - Sonarlint for c++
     - Cppcheck
     - Clang-format code formatting with slightly modified google styleguide rules 
+    - Add debugger and run valgrind when running the executable from the editor
   - Generate docs with doxygen
 
 #### Build

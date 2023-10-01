@@ -14,15 +14,15 @@ RUN apt-get update && \
         cppcheck \
         git \
         libgtest-dev \
-        clang-format && \
-    rm -rf /var/lib/apt/lists/*
+        clang-format \
+        valgrind \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app/build
 
 # Make sure that build/compile_commands.json exists because sonarlint depends on it
 RUN chmod +x /app/scripts/compile.sh
 RUN [ ! -e "/app/build/compile_commands.json" ] && /bin/bash /app/scripts/compile.sh || true
-
 
 # Download and install code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
@@ -34,4 +34,4 @@ RUN mkdir -p /home/vscode/.vscode-server/extensions \
 COPY settings.vscode.json /root/.vscode-remote/data/Machine/settings.json
 
 # Set the entry point without default parameters
-CMD ["/bin/bash", "/app/scripts/compile.sh"]
+CMD ["/bin/bash", "/app/scripts/run_with_valgrind.sh"]

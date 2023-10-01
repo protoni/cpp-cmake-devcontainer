@@ -39,7 +39,7 @@ ENV PATH="/opt/sonar-scanner/bin:${PATH}"
 COPY CMakeLists.txt /app/
 COPY Doxyfile /app/
 COPY src/ /app/src/
-COPY scripts/compile.sh /app/scripts/
+COPY scripts/ /app/scripts/
 COPY .devcontainer/extensions.txt /app/
 COPY test/ /app/test/
 
