@@ -13,7 +13,8 @@ RUN apt-get update && \
         wget \
         cppcheck \
         git \
-        libgtest-dev && \
+        libgtest-dev \
+        clang-format && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app/build

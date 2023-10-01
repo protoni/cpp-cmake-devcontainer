@@ -12,7 +12,8 @@
         "sonarsource.sonarlint-vscode",
         "jbenden.c-cpp-flylint",
         "ms-vscode.cpptools",
-        "ms-vscode.cpptools-extension-pack"
+        "ms-vscode.cpptools-extension-pack",
+        "xaver.clang-format"
       ],
       "settings": {
         "sonarlint.pathToCompileCommands": "/app/build/compile_commands.json",
@@ -22,7 +23,10 @@
         "c-cpp-flylint.lizard.enable": false,
         "c-cpp-flylint.flexelint.enable": false,
         "c-cpp-flylint.flawfinder.enable": false,
-        "c-cpp-flylint.clang.enable": false
+        "c-cpp-flylint.clang.enable": false,
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
       }
     }
   },
