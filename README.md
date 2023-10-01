@@ -11,7 +11,7 @@ Currently configured setup:
   - VScode devcontainer setup
     - Sonarlint for c++
     - Cppcheck
-    - Clang-format code foramtting with slightly modified google styleguide rules 
+    - Clang-format code formatting with slightly modified google styleguide rules 
   - Generate docs with doxygen
 
 #### Build
@@ -32,6 +32,9 @@ code .
 # Open console and open editor in the container
 Ctrl + Shift + P -> Reopen in container
 
+# Build
+/app/scripts/compile.sh
+
 # To switch back to local sources
 Ctrl + Shift + P -> Reopen folder locally
 
@@ -40,6 +43,7 @@ Volume mappings are done for dev env for these folders:
 - src/
 - scripts/
 - build/
+- test/
 ```
 
 #### Run build without SonarQube
